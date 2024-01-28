@@ -76,37 +76,20 @@
       <h1>Projects</h1>
       <hr />
       <div class="projects">
-        <div class="project">
-          <img src="../static/images/Wireframe%20Placeholder.png" alt="Placeholder" />
-          <h3>Project Title</h3>
+          {% for project in projects %}
+             <div class="project">
+          <img class="projectImage" src="{{ project.image }}" alt="Placeholder"/>
+          <h3>{{ project.title }}</h3>
           <hr />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            interdum urna quis magna lobortis, eget finibus urna vestibulum. Sed
-            nec ex non justo dictum venenatis. Fusce nec purus nec mauris
-            posuere malesuada
+            {{ project.description }}
           </p>
           <div class="icons">
-            <img class="icon" src="{{ url_for('static', filename='/images/git.png') }}" alt="GitHub" />
-            <img class="icon" src="{{ url_for('static', filename='/images/link.png') }}" alt="link" />
+{#            <img class="icon" src="{{ url_for('static', filename='/images/git.png') }}" alt="GitHub" />#}
+              <a href="{{ project.link }}"><img class="icon" src="{{ url_for('static', filename='/images/link.png') }}" alt="link" /></a>
           </div>
         </div>
-
-        <div class="project">
-          <img src="../static/images/Wireframe%20Placeholder.png" alt="Placeholder" />
-          <h3>Project Title</h3>
-          <hr />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            interdum urna quis magna lobortis, eget finibus urna vestibulum. Sed
-            nec ex non justo dictum venenatis. Fusce nec purus nec mauris
-            posuere malesuada
-          </p>
-          <div class="icons">
-            <img class="icon" src="../static/images/GitHub%20Link.png" alt="GitHub" />
-            <img class="icon" src="../static/images/Live%20Link.png" alt="link" />
-          </div>
-        </div>
+          {% endfor %}
       </div>
     </div>
 
@@ -116,30 +99,36 @@
       <div class="para">
         <p>Get in touch with us</p>
       </div>
-
-      <form class="form" action="POST">
+        {% with messages = get_flashed_messages() %}
+         {% if messages %}
+               {% for message in messages %}
+                    <p>{{ message }}</p>
+               {% endfor %}
+         {% endif %}
+      {% endwith %}
+      <form class="form" action="{{ url_for("home") }}" method="post">
         <div>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" />
         </div>
         <div class="message">
           <label for="message">Message</label>
-          <input type="text" id="message" name="message" />
+            <textarea type="text" id="message" name="message"></textarea>
         </div>
 
         <div>
           <label for="email">Email</label>
           <input type="email" id="email" name="email" />
         </div>
+          <input type="submit" class="whiteButton inputButton">
       </form>
-      <button class="blueButton">Submit</button>
       <div style="height: 100px"></div>
     </div>
 
     <div class="footer">
-      <img src="{{ url_for("static", filename="/images/facebook.png") }}" alt="facebook" class="icon">
-      <img src="{{ url_for("static", filename="/images/instagram.png") }}" alt="instagram" class="icon">
-      <img src="{{ url_for("static", filename="/images/git.png") }}" alt="git" class="icon">
+        <a href=""><img src="{{ url_for("static", filename="/images/facebook.png") }}" alt="facebook" class="icon"></a>
+        <a href="https://www.instagram.com/emmycodes_xx/"><img src="{{ url_for("static", filename="/images/instagram.png") }}" alt="instagram" class="icon"></a>
+        <a href="https://github.com/Emmybrown775/"><img src="{{ url_for("static", filename="/images/git.png") }}" alt="git" class="icon"></a>
     </div>
 
     <script src="{{ url_for("static", filename='/js/script.js') }}"></script>
