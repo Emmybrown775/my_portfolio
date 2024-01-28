@@ -136,7 +136,8 @@ nav {
 }
 
 .inputButton{
-  grid-column: span 2;
+  width: 100%;
+  margin-top: 50px;
 
 }
 
