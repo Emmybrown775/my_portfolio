@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmy Codes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/styles.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-image">
+        <img src="{{ url_for('static', filename='/images/logo.png') }}" alt="logo.png" class="logo" />
+      </div>
+      <div class="nav-links" id="myNavLinks">
+        <a class="link" href="/#home">Home</a>
+        <a class="link" href="/#about">About</a>
+        <a class="link" href="/#pro">Projects</a>
+        <a href="/#contact" class="whiteButton">Contact</a>
+        <div class="container" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="dropdown" id="myDropdown">
+      <a>Home</a>
+      <a>About</a>
+      <a>Projects</a>
+      <a class="whiteButton" href="#contact">Contact</a>
+    </div>
+
+    <div id="home">
+      <h1>Emmy Brown</h1>
+      <hr />
+      <img class="me" src="{{ url_for('static', filename='/images/me.png') }}" alt="EmmyBrown.png" />
+      <div class="para">
+        <p>
+          Hello, I'm Emmy Brown a website and mobile app developer I am the
+          creator of the brand "Emmy Codes" and also the lead developer and
+          designer. I thank you for taking your time to visit this site and I
+          hope we can talk about bussiness soon.
+        </p>
+      </div>
+      <div class="buttons">
+        <a href="/#pro" class="whiteButton">Projects</a>
+        <a href="/#contact" class="blueButton">Contact</a>
+      </div>
+    </div>
+
+    <div id="about">
+      <h1>About</h1>
+      <hr />
+      <div class="para">
+        <p>
+          Emmy Codes is a proggramming company that helps you bring your
+          imaginations to life, be it website desing and development, mobile app
+          design and development, data anakytics, automating simple and complex
+          task and so much more. Don't think your big if it can be done it will
+          be done, if it can't be don we'll find an aternative. Having doubts?
+          check our previous projects below and when you're read, please do
+          contact us. We look forward to hearing from you
+        </p>
+      </div>
+      <div style="height: 100px"></div>
+    </div>
+
+    <div id="pro">
+      <h1>Projects</h1>
+      <hr />
+      <div class="projects">
+        <div class="project">
+          <img src="../static/images/Wireframe%20Placeholder.png" alt="Placeholder" />
+          <h3>Project Title</h3>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            interdum urna quis magna lobortis, eget finibus urna vestibulum. Sed
+            nec ex non justo dictum venenatis. Fusce nec purus nec mauris
+            posuere malesuada
+          </p>
+          <div class="icons">
+            <img class="icon" src="{{ url_for('static', filename='/images/git.png') }}" alt="GitHub" />
+            <img class="icon" src="{{ url_for('static', filename='/images/link.png') }}" alt="link" />
+          </div>
+        </div>
+
+        <div class="project">
+          <img src="../static/images/Wireframe%20Placeholder.png" alt="Placeholder" />
+          <h3>Project Title</h3>
+          <hr />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+            interdum urna quis magna lobortis, eget finibus urna vestibulum. Sed
+            nec ex non justo dictum venenatis. Fusce nec purus nec mauris
+            posuere malesuada
+          </p>
+          <div class="icons">
+            <img class="icon" src="../static/images/GitHub%20Link.png" alt="GitHub" />
+            <img class="icon" src="../static/images/Live%20Link.png" alt="link" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      <h1>Contact</h1>
+      <hr />
+      <div class="para">
+        <p>Get in touch with us</p>
+      </div>
+
+      <form class="form" action="POST">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="message">
+          <label for="message">Message</label>
+          <input type="text" id="message" name="message" />
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
+        </div>
+      </form>
+      <button class="blueButton">Submit</button>
+      <div style="height: 100px"></div>
+    </div>
+
+    <div class="footer">
+      <img src="{{ url_for("static", filename="/images/facebook.png") }}" alt="facebook" class="icon">
+      <img src="{{ url_for("static", filename="/images/instagram.png") }}" alt="instagram" class="icon">
+      <img src="{{ url_for("static", filename="/images/git.png") }}" alt="git" class="icon">
+    </div>
+
+    <script src="{{ url_for("static", filename='/js/script.js') }}"></script>
+  </body>
+</html>
