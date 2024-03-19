@@ -8,7 +8,7 @@ projects = [
     },
 
     {
-        "title": "RCCG OG20 Yaya Official Website",
+        "title": "RCCG OG20 Yaya Official Website (In Progress)",
         "description": "Here is the official website of the RCCG Ogun Province 20 youths and young adults.",
         "image": "static/images/rccg_yaya.png",
         "link": "https://rccgog20youths.com/",

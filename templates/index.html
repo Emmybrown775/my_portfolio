@@ -66,13 +66,12 @@
       <hr />
       <div class="para">
         <p>
-          Emmy Codes is a proggramming company that helps you bring your
-          imaginations to life, be it website desing and development, mobile app
-          design and development, data anakytics, automating simple and complex
-          task and so much more. Don't think your big if it can be done it will
-          be done, if it can't be don we'll find an aternative. Having doubts?
-          check our previous projects below and when you're read, please do
-          contact us. We look forward to hearing from you
+          Emmy Codes is a website development startup made by a young developer (Me) that help you bring your
+          imaginations to life through code. Be it website design and development, mobile app
+          design and development, data analytics, automating simple and complex
+          task and so much more. Having doubts?
+          check our previous projects below and when you're ready, please do
+          contact us. We look forward to hearing from you.
         </p>
       </div>
       <div style="height: 100px"></div>
@@ -108,11 +107,11 @@
         {% with messages = get_flashed_messages() %}
          {% if messages %}
                {% for message in messages %}
-                    <p>{{ message }}</p>
+                    <p style="color: green">{{ message }}</p>
                {% endfor %}
          {% endif %}
       {% endwith %}
-      <form class="form" action="{{ url_for("home") }}" method="post">
+      <form id="contactForm" class="form" action="{{ url_for("home") }}" method="post">
         <div>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" />
@@ -126,10 +125,8 @@
           <label for="message">Message</label>
             <textarea type="text" id="message" name="message"></textarea>
         </div>
-
-
-          <input type="submit" class="whiteButton inputButton">
       </form>
+    <button class="whiteButton"  form="contactForm">Submit</button>
       <div style="height: 100px"></div>
     </div>
 
